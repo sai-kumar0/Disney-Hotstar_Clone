@@ -1,0 +1,207 @@
+#root {
+  background-color: #0f1014;
+  color: #fff;
+}
+
+.header {
+  padding: 30px 50px 0 50px;
+}
+
+.content-1,
+.content-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-1 .cross {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.content-2 {
+  gap: 15px;
+  padding-right: 20px;
+}
+
+.content-2 button {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 35px;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+}
+
+.content-2 button:first-child {
+  background-color: #222226;
+}
+
+.content-2 button:last-child {
+  background: linear-gradient(to left, #062997, #0858e3);
+}
+
+.content-2 button:focus {
+  box-shadow: none;
+}
+
+.dropdown .dropdown-menu {
+  background-color: #222226;
+}
+
+.dropdown .dropdown-menu li a:hover {
+  background-color: #313137 !important;
+}
+
+.main {
+  height: 85vh;
+}
+
+.main .img {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main .img h2 {
+  color: #e1e6f0;
+  font-size: 36px;
+  font-weight: 600;
+  padding-top: 20px;
+  line-height: 1.4;
+}
+
+.tabel,
+.wrapper {
+  width: 100%;
+}
+
+tbody tr td span {
+  display: block;
+  color: #fff;
+  text-align: start;
+}
+tbody tr td {
+  padding: 12px 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+tbody tr td .sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: #707a94;
+  padding: 5px 0;
+}
+
+table tbody tr td:nth-child(2) {
+  background-color: #20232d;
+}
+
+table tbody tr td:nth-child(3) {
+  color: #707a94;
+}
+
+.correct {
+  font-size: 25px;
+}
+
+.wrong {
+  font-size: 30px;
+}
+
+.details {
+  padding-top: 30px;
+}
+
+.plans .box {
+  border: 1px solid #707a94;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.box {
+  position: relative;
+  margin-right: 70px;
+}
+
+.box p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.box span .mini {
+  font-size: 14px;
+}
+
+.box.active {
+  border: 2px solid #fff;
+}
+
+.box.active .type {
+  color: #ffcc75;
+}
+
+.select {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #0858e3;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  border: 1px solid black;
+}
+
+.box.active .select {
+  opacity: 1;
+}
+
+.button button {
+  color: #fff;
+  background: linear-gradient(to left, #062997, #0858e3);
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+}
+
+.button button:focus {
+  box-shadow: none;
+}
+
+.Search {
+  padding: 30px 0 50px 120px;
+}
+
+.Search input,
+.Search div span {
+  background-color: #252833;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.Search input::placeholder {
+  color: #8b93ac;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.Search div span {
+  font-size: 40px;
+  color: #fff;
+}
+
+.Search input:focus {
+  outline: none;
+}

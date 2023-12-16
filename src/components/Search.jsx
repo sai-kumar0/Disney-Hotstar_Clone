@@ -1,0 +1,60 @@
+import React from "react";
+import Navbar from "./Navbar";
+import Home from "../containers/Home";
+import { BiSearch } from "react-icons/bi";
+import Footer from "./Footer";
+import "../styles/style.css";
+import "../styles/App.css";
+import { useContext, useState, useEffect } from "react";
+import DataContext from "../hooks/DataContext";
+import MovieCard from "./MovieCard";
+
+function Search() {
+  const data = useContext(DataContext);
+
+  const [keys, setKeys] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+
+  useEffect(() => {
+    const filtered = data.filter(
+      (movie) =>
+        movie.title && movie.title.toLowerCase().includes(keys.toLowerCase())
+    );
+    setFilteredData(filtered);
+  }, [keys, data]);
+
+  return (
+    <>
+      <div style={{ position: "fixed", zIndex: "3" }}>
+        <Navbar />
+      </div>
+      <div className="Search col-12">
+        <div className="input-group">
+          <span className="input-group-text" id="basic-addon1">
+            <BiSearch />
+          </span>
+          <input
+            type="text"
+            id="search"
+            className="col-11"
+            placeholder="Movies, Shows and more"
+            autoFocus
+            onChange={(e) => setKeys(e.target.value)}
+          />
+        </div>
+      </div>
+      <div
+        style={{ marginLeft: "120px" }}
+        className="d-flex row-gap-5 column-gap-lg-3 flex-wrap mb-5"
+      >
+        {filteredData.map((item, index) => (
+          <MovieCard item={item} index={index} />
+        ))}
+      </div>
+      <Home list={4} />
+      <Footer />
+    </>
+  );
+}
+
+export default Search;
