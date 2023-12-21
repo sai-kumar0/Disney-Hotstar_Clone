@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import logo from "./../assets/logo.png";
 import { BiUserCircle, BiSearch } from "react-icons/bi";
 import { RiHome5Fill } from "react-icons/ri";

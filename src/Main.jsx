@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import App from "./containers/App.jsx";
 import SignIn from "./components/SignIn.jsx";
 import Search from "./components/Search.jsx";
@@ -23,7 +23,7 @@ function Main() {
           <Spinner animation="border" />
         </div>
       ) : (
-        <BrowserRouter>
+        <Router basename="/Disney-Hotstar_Clone">
           <Routes>
             <Route path="/" element={<App />} />
             <Route path="/SignIn" element={<SignIn />} />
@@ -31,7 +31,7 @@ function Main() {
             <Route path="/shows" element={<Shows />} />
             <Route path="/movies" element={<Tv />} />
           </Routes>
-        </BrowserRouter>
+        </Router>
       )}
     </DataContext.Provider>
   );
