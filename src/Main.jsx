@@ -23,7 +23,7 @@ function Main() {
           <Spinner animation="border" />
         </div>
       ) : (
-        <Router basename="/vite-react-router">
+        <Router basename="/Disney-Hotstar_Clone">
           <Routes>
             <Route path="/" element={<App />} />
             <Route path="/SignIn" element={<SignIn />} />
