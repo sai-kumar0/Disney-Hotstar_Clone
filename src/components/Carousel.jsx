@@ -6,6 +6,8 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import DataContext from "../hooks/DataContext";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 function Carousel() {
   const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
