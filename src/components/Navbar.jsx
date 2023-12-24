@@ -1,20 +1,24 @@
 import React from "react";
 import { useState } from "react";
 import logo from "./../assets/logo.png";
+
+// Navbar icons import
 import { BiUserCircle, BiSearch } from "react-icons/bi";
 import { RiHome5Fill } from "react-icons/ri";
 import { PiTelevisionSimple } from "react-icons/pi";
 import { FiCreditCard } from "react-icons/fi";
 import { MdOutlineSportsBaseball } from "react-icons/md";
-import "../styles/App.css";
+import "../styles/App.css"; // Style sheets
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  // Navbar Hover state
   const [touch, setTouch] = useState(false);
 
   return (
     <div className="nav-bar d-flex">
       <div className="d-flex flex-column">
+        {/* Movie Logo and subscription button */}
         <Link to="/SignIn" style={{ textDecoration: "none" }}>
           <div className="logo">
             <img src={logo} style={{ width: "100px" }} />
@@ -23,6 +27,7 @@ const Navbar = () => {
         </Link>
 
         <div className="navBar" onMouseEnter={() => setTouch(true)}>
+          {/* Navbar Icons */}
           <div className="icons">
             <Link to="/SignIn">
               <div className="icon">
@@ -68,6 +73,7 @@ const Navbar = () => {
         </div>
       </div>
       {touch && (
+        // Navbar icon names on hover state
         <div className="text" onMouseLeave={() => setTouch(false)}>
           <Link to="/SignIn" style={{ textDecoration: "none" }}>
             <h4>User</h4>

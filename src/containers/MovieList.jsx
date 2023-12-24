@@ -8,10 +8,14 @@ import Spinner from "react-bootstrap/Spinner";
 
 function MovieList({ genreId }) {
   const elementRef = useRef(null);
+
+  // Movies Api data and loading state
   const { data, loading } = UseFetch(
     "https://api.themoviedb.org/3/discover/movie?api_key=f2cd35eceb0e7243c51ef2a14301f303&with_genres=" +
       genreId
   );
+
+  // Slider control functions
   const slideRight = (element) => {
     element.scrollLeft += 500;
   };
@@ -21,12 +25,14 @@ function MovieList({ genreId }) {
 
   return (
     <div style={{ position: "relative" }}>
+      {/* Loading screen */}
       {loading ? (
         <div className="d-flex align-content-center justify-content-center">
           <Spinner animation="border" />
         </div>
       ) : (
         <>
+          {/* Slider controls */}
           <GoChevronLeft
             className="leftScroll"
             onClick={() => slideLeft(elementRef.current)}
@@ -35,6 +41,8 @@ function MovieList({ genreId }) {
             className="rightScroll"
             onClick={() => slideRight(elementRef.current)}
           />
+
+          {/* Movie card row */}
           <div className="movieList" ref={elementRef}>
             {data &&
               data.map((item, index) => (

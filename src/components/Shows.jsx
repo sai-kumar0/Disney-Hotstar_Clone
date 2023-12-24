@@ -7,6 +7,7 @@ import Home from "../containers/Home";
 import Footer from "./Footer";
 
 function Shows() {
+  // Movies API data
   const data = useContext(DataContext);
   const filtered = data.filter(
     (movie) => movie.media_type && movie.media_type == "tv"
@@ -14,9 +15,12 @@ function Shows() {
   console.log(filtered);
   return (
     <>
+      {/* Navbar component */}
       <div style={{ position: "fixed", zIndex: "3" }}>
         <Navbar />
       </div>
+
+      {/* Movie shows Component */}
       <div>
         <h2
           className="genreTitle"
@@ -32,6 +36,8 @@ function Shows() {
             <MovieCard item={item} index={index} />
           ))}
         </div>
+
+        {/* Home and Footer components */}
         <Home list={4} />
         <Footer />
       </div>

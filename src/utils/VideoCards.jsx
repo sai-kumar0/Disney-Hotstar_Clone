@@ -1,10 +1,13 @@
 import React from "react";
+
+// Video card images
 import disney from "./../assets/img/disney.png";
 import pixar from "./../assets/img/pixar.png";
 import marvel from "./../assets/img/marvel.png";
 import starwar from "./../assets/img/starwar.png";
 import nationalG from "./../assets/img/nationalG.png";
 
+// Videos imports
 import disneyV from "./../assets/vid/disney.mp4";
 import pixarV from "./../assets/vid/pixar.mp4";
 import marvelV from "./../assets/vid/marvel.mp4";
@@ -12,6 +15,7 @@ import starwarV from "./../assets/vid/star-wars.mp4";
 import nationalGeographicV from "./../assets/vid/national-geographic.mp4";
 
 function VideoCards() {
+  // Video cards images & videos data
   const productionHouseList = [
     {
       id: 1,

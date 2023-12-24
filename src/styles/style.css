@@ -3,6 +3,8 @@
   color: #fff;
 }
 
+/* Search component CSS */
+
 .header {
   padding: 30px 50px 0 50px;
 }
@@ -46,6 +48,7 @@
   box-shadow: none;
 }
 
+/* Drop down button */
 .dropdown .dropdown-menu {
   background-color: #222226;
 }
@@ -54,10 +57,12 @@
   background-color: #313137 !important;
 }
 
+/* Main content */
 .main {
   height: 85vh;
 }
 
+/* Aside image */
 .main .img {
   height: 100%;
   display: flex;
@@ -72,6 +77,7 @@
   line-height: 1.4;
 }
 
+/* Table CSS */
 .tabel,
 .wrapper {
   width: 100%;

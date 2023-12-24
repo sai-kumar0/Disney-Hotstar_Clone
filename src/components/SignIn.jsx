@@ -7,6 +7,7 @@ import { FaCheck } from "react-icons/fa6";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 
+// Subscription plans
 const planList = [
   {
     type: "Super",
@@ -29,6 +30,7 @@ function SignIn() {
   const [activeIndex, setActiveIndex] = useState(0);
   const navigate = useNavigate();
 
+  // Back to the home page
   const handleCancelClick = () => {
     navigate("/");
   };
@@ -39,11 +41,15 @@ function SignIn() {
 
   return (
     <div className="container-fluid wrapper">
+      {/* Header nav */}
       <div className="header d-flex justify-content-between">
+        {/* Logo and cancel button */}
         <div className="content-1">
           <IoCloseOutline className="cross" onClick={handleCancelClick} />
           <img src={logo} style={{ width: "150px" }} />
         </div>
+
+        {/* Language dropdown button */}
         <div className="content-2">
           <div className="dropdown">
             <button
@@ -72,9 +78,13 @@ function SignIn() {
               </li>
             </ul>
           </div>
+
+          {/* Login button */}
           <button className="btn">Login</button>
         </div>
       </div>
+
+      {/* Aside image */}
       <div className="main col-12 mt-4 d-flex">
         <div
           className="img col-5"
@@ -87,6 +97,8 @@ function SignIn() {
             Subscribe now and start <br /> streaming
           </h2>
         </div>
+
+        {/* Subscription details table */}
         <div className="aside col-7 ps-5">
           <div className="tabel">
             <table>
@@ -182,6 +194,8 @@ function SignIn() {
               </tbody>
             </table>
           </div>
+
+          {/* Subscription select options */}
           <div className="details">
             <div className="plans col-12 d-flex">
               {planList.map((item, index) => (

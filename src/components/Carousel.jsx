@@ -1,3 +1,5 @@
+// All imports
+
 import React from "react";
 import "../styles/App.css";
 import { FaPlay, FaPlus } from "react-icons/fa";
@@ -10,12 +12,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 function Carousel() {
+  // Image Base URL
   const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
+  // Movies API data
   const data = useContext(DataContext);
 
   const elementRef = useRef(null);
 
+  // Mini slider control functions
   const slideRight = (element) => {
     element.scrollLeft += 500;
   };
@@ -27,6 +32,7 @@ function Carousel() {
     <div style={{ position: "relative" }}>
       <div id="demo" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
+          {/* Carousel part */}
           {data &&
             data.map((item, index) => (
               <div
@@ -34,6 +40,7 @@ function Carousel() {
                 className={`carousel-item ${index === 0 ? " active" : ""}`}
                 style={{ position: "relative" }}
               >
+                {/* Carousel image */}
                 <img
                   src={IMAGE_BASE_URL + item.backdrop_path}
                   alt={`Slide ${index + 1}`}
@@ -44,11 +51,14 @@ function Carousel() {
                     objectFit: "cover",
                   }}
                 />
+
+                {/* Movie Details */}
                 <div className="carousel-caption textarea">
                   <div className="caption">
                     <h1 className="text-start title">
                       {item.title || item.name}
                     </h1>
+
                     <p className="text-start details">
                       <span>
                         {(item.first_air_date &&
@@ -62,11 +72,13 @@ function Carousel() {
                       </span>
                     </p>
                     <p className="text-start overview">{item.overview}</p>
+
                     <div className="buttons">
                       <Link to="/SignIn" className="watchBtn d-inline-block">
                         <FaPlay className="mx-2 pb-1" />
                         Subscribe to watch
                       </Link>
+
                       <a href="#" className="addBtn">
                         <FaPlus />
                       </a>
@@ -77,6 +89,8 @@ function Carousel() {
             ))}
         </div>
       </div>
+
+      {/* Mini Image Slider */}
       <div
         style={{
           position: "absolute",
@@ -86,6 +100,7 @@ function Carousel() {
           marginRight: "100px",
         }}
       >
+        {/* Mini slider Buttons */}
         <GoChevronLeft
           className="left"
           onClick={() => slideLeft(elementRef.current)}

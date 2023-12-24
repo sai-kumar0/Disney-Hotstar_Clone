@@ -7,10 +7,14 @@ import VerticalCard from "../components/VerticalCard";
 
 function VerticalList({ genreId, index }) {
   const elementRef = useRef(null);
+
+  // Movies API data and loading state
   const { data, loading } = UseFetch(
     "https://api.themoviedb.org/3/discover/movie?api_key=f2cd35eceb0e7243c51ef2a14301f303&with_genres=" +
       genreId
   );
+
+  // Slider controls
   const slideRight = (element) => {
     element.scrollLeft += 500;
   };
@@ -20,6 +24,7 @@ function VerticalList({ genreId, index }) {
 
   return (
     <div style={{ position: "relative" }}>
+      {/* Slider controls */}
       <GoChevronLeft
         className="leftScroll VLScroll"
         onClick={() => slideLeft(elementRef.current)}
@@ -28,6 +33,8 @@ function VerticalList({ genreId, index }) {
         className="rightScroll VRScroll"
         onClick={() => slideRight(elementRef.current)}
       />
+
+      {/* Vertical card list row */}
       <div key={index} className="vMovieList" ref={elementRef}>
         {data &&
           data.map((item, index) => (

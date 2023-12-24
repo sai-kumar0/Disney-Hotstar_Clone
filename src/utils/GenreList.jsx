@@ -1,3 +1,4 @@
+// Movie Genre list data
 const GenreList = [
   {
     id: 28,

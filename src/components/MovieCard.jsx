@@ -3,12 +3,18 @@ import "../styles/App.css";
 import { FaPlay, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+// Movie Cards function
+
 function MovieCard({ item, index }) {
+  // Image base URL
   const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
   return (
+    // Container
     <div className="movies">
       <img src={IMAGE_BASE_URL + item.poster_path} key={index} />
+
+      {/* Movie details */}
       <div className="data">
         <div className="HButtons">
           <Link to="/SignIn" className="d-inline-block btn1 text-center">

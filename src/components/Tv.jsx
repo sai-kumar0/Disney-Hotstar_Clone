@@ -7,6 +7,7 @@ import Home from "../containers/Home";
 import Footer from "./Footer";
 
 function Tv() {
+  // Movies API data
   const data = useContext(DataContext);
   const filtered = data.filter(
     (movie) => movie.media_type && movie.media_type == "movie"

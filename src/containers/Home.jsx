@@ -19,14 +19,17 @@ function Home({ list }) {
           index < list && (
             <>
               {index === 3 ? (
+                // Animated video cards
                 <VideoCards />
               ) : index != 0 && index % 4 === 0 ? (
                 <>
+                  {/* Vertical movie card row  */}
                   <h2 className="genreTitle">{item.name}</h2>
                   <VerticalList genreId={item.id} index={index} />
                 </>
               ) : (
                 <>
+                  {/* Horizontal movie card row */}
                   <h2 className="genreTitle">{item.name}</h2>
                   <MovieList genreId={item.id} index={index} />
                 </>

@@ -10,10 +10,12 @@ import Spinner from "react-bootstrap/Spinner";
 import Tv from "./components/Tv.jsx";
 
 function Main() {
+  // Movies API data and loading state
   const { data, loading } = UseFetch(
     "https://api.themoviedb.org/3/trending/all/day?api_key=f2cd35eceb0e7243c51ef2a14301f303"
   );
   return (
+    // Passing data through all the child components
     <DataContext.Provider value={data}>
       {loading ? (
         <div
@@ -24,6 +26,7 @@ function Main() {
         </div>
       ) : (
         <Router basename="/Disney-Hotstar_Clone">
+          {/* Routes to all components */}
           <Routes>
             <Route path="/" element={<App />} />
             <Route path="/SignIn" element={<SignIn />} />
