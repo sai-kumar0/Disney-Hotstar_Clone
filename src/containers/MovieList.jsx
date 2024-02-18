@@ -46,7 +46,7 @@ function MovieList({ genreId }) {
           <div className="movieList" ref={elementRef}>
             {data &&
               data.map((item, index) => (
-                <MovieCard item={item} index={index} />
+                <MovieCard item={item} index={index} key={index} />
               ))}
           </div>
         </>
